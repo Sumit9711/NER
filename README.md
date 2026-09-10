@@ -1,282 +1,320 @@
-# SIH-NER — North Eastern Region Logistics & Accessibility Intelligence Command Center
+# ASOMSETU — Protect the Mission
 
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Leaflet](https://img.shields.io/badge/Leaflet-GIS-199900?style=for-the-badge&logo=leaflet&logoColor=white)](https://leafletjs.com/)
-[![Smart India Hackathon](https://img.shields.io/badge/SIH-Disaster_Logistics_Command-FF9933?style=for-the-badge)](https://sih.gov.in/)
+[![Smart India Hackathon](https://img.shields.io/badge/SIH_2026-PS26002-FF9933?style=for-the-badge)](https://sih.gov.in/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
-> **A disaster logistics and terrain-risk intelligence platform for resilient emergency supply movement across India's North Eastern Region.**
+**AI-Based Emergency Logistics Resilience & Accessibility Platform for the North Eastern Region**
+
+ASOMSETU is an AI-assisted emergency logistics intelligence platform designed to help authorities plan, monitor, and protect critical supply missions during floods, heavy rainfall, road blockages, river-level changes, and other disruptions across the North Eastern Region (NER).
+
+Instead of only showing where a disruption has occurred, ASOMSETU answers:
+
+> **"What happens if this road fails?"**
+
+It identifies affected missions, facilities, settlements, estimated delays, alternative routes, and recommended actions so that logistics coordinators can make faster and more informed decisions.
 
 ---
 
-## 📌 Overview
+## 1. Project Information
 
-The **SIH-NER Logistics Command Center** is an operational dashboard designed to support disaster-response logistics across the eight states of India's North Eastern Region (NER):
-
-**Assam · Arunachal Pradesh · Meghalaya · Manipur · Mizoram · Nagaland · Tripura · Sikkim**
-
-The platform brings together GIS mapping, convoy telemetry, incident management, risk intelligence, route recommendations, ETA analytics, offline field reporting, and role-based access control into a single unified command interface.
-
-> **The Goal:**  
-> Help decision-makers understand what is happening in real time, identify vulnerable corridors, reroute critical supplies, and coordinate field response when normal connectivity and transportation networks are disrupted.
-
----
-
-## ⚠️ The Problem
-
-The North Eastern Region presents a particularly challenging environment for disaster logistics:
-
-- **Flash Floods & Monsoons:** Annual deluges disrupt highways and river-basin transport across major river systems.
-- **Landslides & Sinking Terrain:** Sinking zones and unstable slopes isolate mountain corridors and cut off districts for days.
-- **Strategic Road Dependencies:** Single highway dependencies create severe bottlenecks for fuel, food rations, pharmaceuticals, and relief equipment.
-- **Intermittent Connectivity:** Rugged terrain leads to frequent cellular blackouts, making conventional always-online tracking unreliable in remote areas.
-- **Multi-Agency Coordination:** Multiple response agencies (BRO, NDRF, SDMA, PWD, Transport Operators) need to coordinate road clearance, rescue ops, convoy movements, and relief supplies simultaneously.
-
-> *A resilient logistics system therefore needs more than a map. It needs a shared operational picture and a coordinated response workflow.*
+* **Project Title:** ASOMSETU — AI-Based Emergency Logistics Resilience & Accessibility Platform
+* **PS ID:** PS26002
+* **PS Title:** AI-Based Smart Logistics and Accessibility Intelligence Platform for North Eastern Region (NER)
+* **Category:** Software
+* **Theme:** Smart Automation
+* **Tagline:** **Protect the Mission.**
+* **Repository:** [https://github.com/Sumit9711/NER](https://github.com/Sumit9711/NER)
 
 ---
 
-## 🚀 Core Capabilities
+## 2. Problem Statement
 
-### 1. 🗺️ Live GIS Command Map
-A tactical geospatial interface for monitoring roads, hazards, facilities, and convoy activity.
-- Leaflet-based interactive mapping engine
-- Satellite, terrain, and operational dark-mode map views
-- Convoy and individual vehicle visualization
-- Live hazard and chokepoint pins
-- Route polylines and operational layer toggles
-- State-level sector filtering across all 8 NER states
+The North Eastern Region is highly vulnerable to floods, heavy rainfall, river-level changes, landslides, embankment failures, and road disruptions.
 
----
+During such events, emergency logistics coordinators need to quickly determine:
 
-### 2. 🚚 Convoy & Supply Chain Monitoring
-Track critical relief movement across vulnerable corridors with granular convoy telemetry:
-- Active relief convoys and transport units
-- Fuel (LPG/petrol) and essential supply movement
-- Medical logistics and priority cargo tracking
-- Real-time vehicle status indicators
-- Checkpoint verification and route progress
-- Consignment delivery manifests and tonnage metrics
-- Operational delay metrics
+* Which roads and corridors are currently at risk?
+* Which critical missions are affected?
+* Which hospitals, health centres, villages, and supply destinations may become inaccessible?
+* How much additional travel time could a disruption cause?
+* Which alternative routes are available?
+* What happens if a critical road completely fails?
+* What action should be taken before the disruption affects the mission?
 
-**Vehicle Operational States:**
-$$\text{MOVING} \longrightarrow \text{IDLING} \longrightarrow \text{HALTED} \longrightarrow \text{REROUTED}$$
+Existing systems often provide individual data points such as weather, flood information, maps, or incident reports. The challenge is converting these fragmented signals into **mission-level operational decisions**.
 
 ---
 
-### 3. 🛣️ Strategic Corridor Monitoring
-The system models and monitors vital transportation lifelines serving the region:
+## 3. Proposed Solution
 
-| Corridor | Strategic Role | Key Focus & Terrain Challenges |
+**ASOMSETU** integrates geospatial data, weather and flood information, road-network data, field reports, mission information, and vehicle telemetry into a unified emergency logistics command platform.
+
+The system follows:
+
+$$\textbf{DETECT} \longrightarrow \textbf{UNDERSTAND} \longrightarrow \textbf{PREDICT} \longrightarrow \textbf{SIMULATE} \longrightarrow \textbf{DECIDE} \longrightarrow \textbf{ACT} \longrightarrow \textbf{VERIFY}$$
+
+### Core Workflow
+
+1. **Detect** disruptions using weather, river, flood, road, and field information.
+2. **Understand** why a route or area is becoming risky.
+3. **Predict** potential road/accessibility disruptions when sufficient historical data is available.
+4. **Simulate** road failures and calculate their consequences.
+5. **Decide** the safest or most resilient routing strategy.
+6. **Act** through mission reassignment, route changes, field intervention, or alerts.
+7. **Verify** the situation through updated observations and field reports.
+
+### Signature Capability — Impact Simulation
+
+A logistics coordinator can select a road segment and simulate:
+
+> **"What happens if this road fails?"**
+
+ASOMSETU temporarily removes the road from the routing network and calculates:
+
+* Affected active missions
+* Affected hospitals and health centres
+* Affected settlements
+* Disconnected destinations
+* Alternative routes
+* Additional travel time
+* Accessibility changes
+* Recommended intervention
+
+This makes ASOMSETU a **logistics resilience platform**, rather than simply a navigation or map application.
+
+---
+
+## 4. Key Features
+
+### Emergency Command Center
+* Interactive Assam / NER map with multi-layer overlays (satellite, terrain, tactical)
+* Active mission overview and cargo tracking
+* Critical disruption alerts and hazard ticker
+* Real-time risk summary across all 8 NER states
+* Data-source health telemetry
+* Mission and road status feeds
+* Incident timeline and operational log
+
+### Mission Management
+* Create and manage emergency relief missions
+* Origin and destination tracking with waypoint progress
+* Commodity and priority classification (medical, fuel, rations)
+* Vehicle assignment and convoy groupings
+* Dynamic route and ETA monitoring
+* Real-time mission risk assessment
+
+### Risk Intelligence
+* Rainfall-based precipitation hazard index
+* River-level and flood extent information
+* Road vulnerability and slope stability analysis
+* Verified field incident reports
+* Historical incident patterns and recurring slide areas
+* Explainable risk evidence
+
+Every risk result answers:
+
+$$\textbf{WHAT} \longrightarrow \textbf{WHY} \longrightarrow \textbf{IMPACT} \longrightarrow \textbf{ACTION}$$
+
+### Impact Simulator
+* Select any road segment or corridor section
+* Simulate complete or partial road failure
+* Recalculate affected network nodes dynamically
+* Identify affected missions, health facilities, and isolated settlements
+* Compute alternative routes and bypass corridors
+* Compare before/after accessibility scores
+* Estimate additional travel time and convoy delay
+
+### Intelligent Routing
+Routes can be evaluated using multiple operational parameters:
+* Travel time and gradient profiles
+* Road accessibility and weight limits
+* Disruption probability and weather risk
+* Mission priority classification
+
+**Supported Routing Modes:**
+* `FASTEST` — Minimizes travel time under current conditions
+* `SAFEST` — Avoids flood-prone and high landslide risk corridors
+* `BALANCED` — Balances mission deadline with route vulnerability
+
+### Offline Field Reporting
+Field officers operating in zero-connectivity terrain can submit:
+* Incident type (landslide, waterlogging, bridge damage)
+* Description and on-site observations
+* Severity rating
+* GPS coordinates
+* Timestamp
+* Field photographs
+* Voice notes
+
+Reports are stored locally in the browser (`localStorage` / IndexedDB) and automatically synchronized when connectivity returns.
+
+### Data Source Health
+The system monitors and exposes telemetry for every ingestion feed:
+* Source status (`LIVE` | `STALE` | `UNAVAILABLE` | `PREDICTED` | `SIMULATED`)
+* Last successful fetch timestamp
+* Last attempt and latency
+* Record count and ingested geometry
+* Source provider metadata
+
+### Explainable AI
+AI-generated risk assessments and route recommendations are accompanied by:
+* Contributing evidence metrics
+* Confidence score
+* Timestamp and source metadata
+* Model version and scoring methodology
+* Plain-language explanation
+
+The system does not hide uncertainty behind an opaque single score.
+
+---
+
+## 5. Technology Stack
+
+| Layer | Technologies | Purpose |
 |:---|:---|:---|
-| **NH-29** | Dimapur–Kohima–Imphal Lifeline | Vital conduit for Nagaland & Manipur; high landslide vulnerability |
-| **NH-27** | Lumding–Haflong–Silchar Hill Section | Mountain section connecting Dima Hasao & Barak Valley |
-| **NH-10** | Sevoke–Teesta–Gangtok Axis | Sikkim's sole major highway; recurring Teesta river sinking zones |
-| **NH-13** | Trans-Arunachal Connectivity | High-altitude strategic border corridor connecting western Arunachal |
-| **NH-6** | Meghalaya–Silchar Trunk Route | Vital freight trunk through East Jaintia Hills to South Assam |
-| **NH-306** | Silchar–Vairengte–Aizawl Supply Line | Mizoram's primary artery for essential food, fuel, and supplies |
-| **NH-208** | Tripura Multi-Modal Corridor | Key arterial transit linking Agartala to southern ports |
-
-*These corridors can be tracked alongside active incidents, vehicle convoys, risk indices, and live delivery manifests.*
-
----
-
-### 4. 🧠 Risk Intelligence & Route Recommendations
-The platform combines operational and environmental factors to support real-time routing decisions:
-- Rainfall intensity and precipitation alerts
-- Terrain elevation and slope gradient profiles
-- Historical landslide vulnerability indices
-- Real-time road clearance status
-- Bridge weight constraints and structural safety limits
-- Active corridor disruption and chokepoint alerts
-- Prevailing operational and weather conditions
-
-When a corridor becomes unavailable or high-risk, the system surfaces alternative route recommendations and bypass options (such as bypass routes avoiding major slide zones).
-
-> [!NOTE]
-> **Decision-Support Notice:** The current implementation is a command-center prototype. Route and risk outputs are designed to serve as decision-support intelligence for coordinators rather than autonomous safety-critical navigation.
+| **Frontend UI** | React 19, TypeScript/JavaScript, Vite 8, Tailwind CSS 4 | Fast responsive operational dashboard, tactical dark mode |
+| **GIS & Mapping** | Leaflet 1.9, React-Leaflet 5.0, MapLibre GL compatible | Interactive mapping, road polylines, hazard geofencing |
+| **Data Visualization** | Recharts 3.10 | Mission throughput, cargo tonnage, delay curves |
+| **State & Offline** | IndexedDB, `localStorage`, Service Workers | Offline-first field reporting and mission caching |
+| **Backend (Target API)** | Python, FastAPI, REST APIs, JWT, RBAC | High-performance mission planning and simulation engine |
+| **Database & GIS DB** | PostgreSQL, PostGIS | Spatial indexes, routing network topologies, mission storage |
+| **AI / Machine Learning** | Python, Pandas, GeoPandas, NumPy, Scikit-learn, LightGBM | Evidence-based risk scoring, historical hazard prediction |
+| **Routing Engine** | OpenStreetMap, OSRM / GraphHopper | Multi-modal network routing, dynamic edge removal |
+| **Key Integrations** | IMD, CWC, Bhuvan/ISRO/NDEM, ASDMA, OpenStreetMap | Multi-source meteorological and hydro-spatial feeds |
 
 ---
 
-### 5. ⚠️ Incident Management
-Incidents follow a structured operational lifecycle to ensure seamless inter-agency handoffs:
-
-```
-  ┌────────────┐
-  │  REPORTED  │
-  └─────┬──────┘
-        ▼
-  ┌────────────┐
-  │  VERIFIED  │
-  └─────┬──────┘
-        ▼
-  ┌────────────────────────┐
-  │  CLEARING IN PROGRESS  │
-  └─────┬──────────────────┘
-        ▼
-  ┌────────────────┐
-  │  PILOT ESCORT  │
-  └─────┬──────────┘
-        ▼
-  ┌────────────┐
-  │  RESOLVED  │
-  └────────────┘
-```
-
-**Key Workflow Capabilities:**
-- Ground hazard reporting (mudslides, waterlogging, bridge washouts)
-- Incident verification and severity classification
-- Real-time clearance progress tracking with response teams (BRO, NDRF, PWD)
-- Convoy diversion instructions
-- Dynamic impact-radius assessments
-- Historical incident logs and resolution audit trails
-
----
-
-### 6. ⏱️ ETA & Delay Analytics
-The dashboard provides operational visibility into delays caused by:
-- Severe monsoon rainfall and water accumulation
-- Road load and vehicle height restrictions
-- Border weight checkpost and inspection queues
-- Single-lane alternating traffic pilot escorts
-- Steep hill-road bottlenecks and hairpin turns
-- Debris clearance operations
-
-*Historical delay patterns are utilized to identify recurring chokepoints and plan convoy departures proactively.*
-
----
-
-### 7. 📱 Offline-First Field Reporting
-Remote field teams and highway patrols frequently operate in deep mountain valleys with unreliable cellular reception:
-- **Offline Incident Creation:** Field officers can log new hazard reports without an active network connection.
-- **Local Browser Persistence:** Reports are safely cached on the device (`localStorage` / IndexedDB queuing).
-- **Uninterrupted Operations:** Workflows remain fully accessible offline.
-- **Automatic Background Sync:** As soon as connectivity or a satellite link is detected, reports automatically sync with Central Command.
-
----
-
-### 8. 🔐 Role-Based Access Control (RBAC)
-The interface supports six distinct operational personas tailored to civil defense and governance structures:
-
-| Role | Agency / Affiliation | Primary Responsibility |
-|:---|:---|:---|
-| **Government Logistics Coordinator** | MDoNER / North Eastern Council (NEC) | Regional command overview, macro supply allocations, system-wide rerouting |
-| **District Authority** | District Disaster Management Authority (DDMA) | District-level incident management, resource requisition, civil alerts |
-| **Field Officer** | State PWD / Mobile Highway Escort | On-ground field reporting, road clearance validation, convoy check-ins |
-| **NDRF Commander** | 1st & 12th NDRF Battalions | Search & rescue logistics, disaster sector mobilization, emergency corridors |
-| **Convoy Pilot / Driver** | Critical Supply & Medical Transport | Route guidance, turn-by-turn waypoint updates, incident alerts, panic beacon |
-| **System Administrator** | NIC Security Cell | Platform access governance, RBAC permissions, audit log scrutiny |
-
----
-
-### 9. 🛡️ Audit & Accountability
-Critical operational actions are recorded with timestamps and actor credentials for complete traceability:
-- Emergency command decisions
-- Incident state lifecycle transitions
-- Convoy rerouting protocols and bypass authorizations
-- Role switching and permission modifications
-- Administrative modifications
-
-*Ensures an immutable operational history to support post-incident analysis and administrative accountability.*
-
----
-
-### 10. 🌐 Multilingual Tactical Interface
-- **Bilingual Support:** Seamless toggling between **English** and **हिन्दी**
-- **Command Palette:** Fast keyboard-driven command navigation (`Ctrl + K` or `/`)
-- **Global Search:** Instantly locate convoys, incidents, supply warehouses, and corridor sectors
-- **Live Clock & Uplink:** Real-time Indian Standard Time (IST) clock with satellite heartbeat telemetry
-- **Tactical UX:** High-density dark mode engineered for continuous monitoring in control rooms
-
----
-
-## 🏗️ System Architecture
-
-```
-                         ┌─────────────────────────────┐
-                         │      SIH-NER COMMAND        │
-                         │          CENTER             │
-                         └──────────────┬──────────────┘
-                                        │
-                    ┌───────────────────┴───────────────────┐
-                    │                                       │
-                    ▼                                       ▼
-          ┌──────────────────┐                    ┌──────────────────┐
-          │ Operational UI   │                    │ Tactical GIS     │
-          │                  │                    │                  │
-          │ • Dashboard      │                    │ • Maps           │
-          │ • Incidents      │                    │ • Convoys        │
-          │ • Deliveries     │                    │ • Hazards        │
-          │ • Field Reports  │                    │ • Route Layers   │
-          └────────┬─────────┘                    └────────┬─────────┘
-                   │                                       │
-                   └───────────────────┬───────────────────┘
-                                       │
-             ┌─────────────────────────┼─────────────────────────┐
-             │                         │                         │
-             ▼                         ▼                         ▼
-      ┌───────────────┐       ┌────────────────┐       ┌────────────────┐
-      │ Authentication│       │ Risk & Route   │       │ Search &       │
-      │ & RBAC        │       │ Intelligence   │       │ Operations     │
-      │               │       │                │       │                │
-      │ • Roles       │       │ • Risk scoring │       │ • Global search│
-      │ • Guards      │       │ • Detours      │       │ • Command bar  │
-      │ • Audit       │       │ • ETA analysis │       │ • Filters      │
-      └───────────────┘       └────────────────┘       └────────────────┘
-```
-
----
-
-## 💻 Technology Stack
-
-| Layer | Technology | Purpose |
-|:---|:---|:---|
-| **Frontend Framework** | **React 19.2** | Component-based operational interface with concurrent rendering |
-| **Build Tool** | **Vite 8.2** | High-performance dev server and optimized production bundling |
-| **Styling** | **Tailwind CSS 4.3** | High-density tactical dashboard styling and responsive layouts |
-| **GIS & Mapping** | **Leaflet 1.9 + React-Leaflet 5.0** | Interactive geospatial visualization, custom markers, polylines |
-| **Charts & Analytics** | **Recharts 3.10** | Throughput curves, delay trends, and operational data visualizations |
-| **Routing** | **React Router DOM 7.18** | Client-side routing with role-based route access guards |
-| **Iconography** | **Lucide React** | Consistent, lightweight tactical and logistics icons |
-| **Code Quality** | **Oxlint** | High-speed Rust-powered JavaScript/React linting |
-
----
-
-## 📂 Project Structure
+## 6. Architecture
 
 ```text
-ner-logistics-command-center/
+                    ┌─────────────────────────┐
+                    │   Government / Field    │
+                    │        Users            │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │   ASOMSETU Web / PWA    │
+                    │ React + TypeScript       │
+                    │ MapLibre + Offline PWA   │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │       FastAPI Backend   │
+                    │ Auth + RBAC + REST API  │
+                    └────────────┬────────────┘
+                                 │
+          ┌──────────────────────┼──────────────────────┐
+          │                      │                      │
+          ▼                      ▼                      ▼
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│ Data Providers  │    │ Logistics Engine │    │ Risk / AI       │
+│                 │    │                  │    │ Engine          │
+│ IMD             │    │ Mission Manager  │    │ Risk Assessment │
+│ CWC             │    │ Routing          │    │ Prediction      │
+│ Bhuvan / NDEM   │    │ Impact Simulator │    │ Explainability  │
+│ ASDMA           │    │ ETA              │    │                 │
+│ OSM             │    │ Accessibility    │    │                 │
+│ GPS / Telemetry │    │                  │    │                 │
+└────────┬────────┘    └────────┬─────────┘    └────────┬────────┘
+         │                      │                       │
+         └──────────────────────┼───────────────────────┘
+                                ▼
+                    ┌─────────────────────────┐
+                    │ PostgreSQL + PostGIS    │
+                    │                         │
+                    │ Missions                │
+                    │ Roads                   │
+                    │ Incidents               │
+                    │ Field Reports           │
+                    │ Weather / River Data    │
+                    │ Flood Extents           │
+                    │ Risk Predictions        │
+                    │ Vehicles                 │
+                    └─────────────────────────┘
+```
+
+### Decision Pipeline
+
+```text
+Weather / River / Flood / Roads / Field Reports
+                       │
+                       ▼
+                    Ingestion
+                       │
+                       ▼
+                Data Normalization
+                       │
+                       ▼
+             Spatial + Temporal Join
+                       │
+                       ▼
+                Risk Assessment
+                       │
+          ┌────────────┴────────────┐
+          ▼                         ▼
+    Current Risk              ML Prediction
+                                  │
+                                  ▼
+                         Impact Simulation
+                                  │
+                                  ▼
+                         Route Alternatives
+                                  │
+                                  ▼
+                       Mission-Level Decision
+                                  │
+                                  ▼
+                         Alert / Action
+                                  │
+                                  ▼
+                              Verify
+```
+
+---
+
+## 7. Repository Structure
+
+```text
+ASOMSETU / ner-logistics-command-center/
 │
-├── public/                         # Static assets and map markers
+├── README.md                       # Comprehensive Platform Documentation
+├── LICENSE                         # Open-source MIT License
+├── package.json                    # Frontend dependencies & scripts
+├── vite.config.js                  # Vite bundler configuration
 │
-├── src/
-│   ├── assets/                     # Brand emblems and visual graphics
+├── public/                         # Public GIS assets, marker icons
+│
+├── src/                            # Command Center Frontend Application
+│   ├── assets/                     # Emblems, brand marks, and styles
 │   │
-│   ├── components/                 # Reusable tactical UI components
-│   │   ├── alerts/                 # Critical emergency cards and triage filters
-│   │   ├── analytics/              # Recharts throughput and performance views
-│   │   ├── common/                 # Header, Sidebar, AlertTicker, GlobalSearch
-│   │   ├── dashboard/              # Operational KPI tiles and convoy trackers
-│   │   ├── deliveries/             # Supply manifest tables and tonnage counters
-│   │   ├── eta/                    # Delay breakdown matrices
-│   │   ├── risk/                   # Terrain risk cards and weather dials
-│   │   └── routes/                 # Alternative route recommendation panels
+│   ├── components/                 # Reusable UI components & modules
+│   │   ├── alerts/                 # Critical emergency cards & urgency filters
+│   │   ├── analytics/              # Recharts visual components & throughput graphs
+│   │   ├── common/                 # Global Header, Sidebar, AlertTicker, GlobalSearch
+│   │   ├── dashboard/              # Metric KPI cards, Active Convoy tables
+│   │   ├── deliveries/             # Manifests & consignment tracking
+│   │   ├── eta/                    # Corridor delay breakdown tables
+│   │   ├── risk/                   # Risk matrix heatmaps & weather dials
+│   │   └── routes/                 # What-if Impact Simulation & route panels
 │   │
-│   ├── data/                       # Domain datasets and simulation registries
+│   ├── data/                       # Domain data, corridors & mock telemetry
 │   │   ├── mockDashboardData.js    # Operational KPIs, alerts, vehicle statuses
 │   │   ├── mapData.js              # Geographic coordinates, hubs, and routes
 │   │   ├── nerCorridors.js         # Master registry of the 8 NER strategic corridors
 │   │   ├── incidentData.js         # Road blocks, mudslides, and flood events
 │   │   ├── riskData.js             # Terrain stability and flood risk metrics
 │   │   ├── usersRolesData.js       # RBAC policies, permission lists, and demo users
-│   │   └── translations/           # Bilingual dictionaries (English, Hindi)
+│   │   └── translations/           # Regional i18n dictionaries (English, Hindi)
 │   │
-│   ├── hooks/                      # Custom React hooks (useAuth, useLanguage)
+│   ├── hooks/                      # Custom hooks (useAuth, useLanguage)
 │   ├── layouts/                    # MainLayout (with tactical chrome) & AuthLayout
-│   │
-│   ├── pages/                      # Primary operational screens
+│   ├── pages/                      # Operational command center screens
 │   │   ├── Dashboard.jsx           # Central Operations Overview
 │   │   ├── LiveMap.jsx             # Full-Screen Tactical GIS Command Map
 │   │   ├── Vehicles.jsx            # Fleet & Convoy Telemetry
@@ -284,7 +322,7 @@ ner-logistics-command-center/
 │   │   ├── Incidents.jsx           # Hazard Tracker & Crisis Log
 │   │   ├── IncidentDetails.jsx     # Incident Deep-Dive & Agency Dispatch
 │   │   ├── RiskIntelligence.jsx    # Predictive Terrain Hazard Assessment
-│   │   ├── RouteRecommendations.jsx# AI Alternative Route & Bypass Engine
+│   │   ├── RouteRecommendations.jsx# AI Alternative Route & Impact Simulator
 │   │   ├── ETADelays.jsx           # Mountain Corridor Delay Projections
 │   │   ├── Alerts.jsx              # Regional Emergency Broadcasts
 │   │   ├── Deliveries.jsx          # Cargo Manifest & Supply Tonnage
@@ -299,18 +337,93 @@ ner-logistics-command-center/
 │   ├── App.jsx                     # Application routes & context providers
 │   └── main.jsx                    # Application entry point
 │
-├── package.json
-├── vite.config.js
-└── README.md
+└── submission/
+    └── presentation.md             # Final SIH Presentation Link
 ```
+
+### What Goes Where?
+
+| Item | Location |
+|:---|:---|
+| Frontend Source Code | `src/` |
+| GIS Map & Tactical Telemetry | `src/pages/LiveMap.jsx`, `src/data/mapData.js` |
+| Impact Simulator & Routing | `src/pages/RouteRecommendations.jsx`, `src/components/routes/` |
+| Risk Intelligence Engine | `src/pages/RiskIntelligence.jsx`, `src/components/risk/` |
+| Strategic Corridors Registry | `src/data/nerCorridors.js` |
+| Offline Field Reporting | `src/pages/FieldReports.jsx` |
+| Role-Based Access Control | `src/services/authService.js`, `src/data/usersRolesData.js` |
+| Final Presentation | `submission/presentation.md` |
 
 ---
 
-## ⚡ Getting Started
+## 8. Final Presentation
+
+The final SIH presentation is stored in [`submission/presentation.md`](./submission/presentation.md):
+
+* **Direct Viewer Link:** [Open Final Presentation (Google Slides)](https://docs.google.com/presentation/d/1rRVEb_hT2DvjaEEfc5wGSnqgNLwjI2rB/edit?usp=sharing&ouid=110493815875369462344&rtpof=true&sd=true)
+
+The presentation covers:
+1. Problem statement and NER logistics context
+2. ASOMSETU solution & "Protect the Mission" methodology
+3. Technical architecture and decision pipeline
+4. Feasibility and regional implementation plan
+5. Impact on disaster relief and supply chain resilience
+6. Research, datasets, and operational references
+
+---
+
+## 9. Demo Video
+
+A comprehensive demonstration of the working system workflow:
+
+```text
+Login (Role Selection)
+  ↓
+Command Center Overview
+  ↓
+Create / Select Emergency Mission
+  ↓
+View Current Route & Risk
+  ↓
+Select Critical Road
+  ↓
+"What happens if this road fails?"
+  ↓
+Run Impact Simulation
+  ↓
+Affected Missions / Facilities / Settlements
+  ↓
+Alternative Route Recalculation
+  ↓
+Recommended Action Broadcast
+  ↓
+Field Report / Verification
+```
+
+* **Video Link:** `[Add YouTube / Google Drive demo link here]`
+
+---
+
+## 10. Screenshots / Prototype
+
+Recommended prototype screenshots covering operational views:
+* **Command Center:** Central overview with live KPIs, active convoys, and chokepoints
+* **Mission Planner:** Consignment manifests, cargo priority, and destination tracking
+* **Impact Simulator:** "What happens if this road fails?" scenario testing and detour analysis
+* **Risk Intelligence:** Multi-source rainfall, river-level, and slope vulnerability matrix
+* **Live Vehicle Tracking:** Real-time GIS breadcrumbs for emergency relief convoys
+* **Offline Field Reporting:** Local report caching and automatic synchronization
+* **Data Source Health:** Latency, status, and freshness telemetry of data feeds
+
+> *Screenshots represent the implemented command center prototype. Simulated demonstration data is explicitly labeled.*
+
+---
+
+## 11. Installation
 
 ### Prerequisites
-- **Node.js**: v18.0.0 or higher
-- **npm**: v9.0.0 or higher
+* **Node.js:** v18.0.0 or higher
+* **npm:** v9.0.0 or higher
 
 Check your installed versions:
 ```bash
@@ -318,111 +431,119 @@ node --version
 npm --version
 ```
 
-### Installation
+### Clone the Repository
+```bash
+git clone https://github.com/Sumit9711/NER.git
+cd ner-logistics-command-center
+```
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Sumit9711/NER.git
-   cd NER
-   ```
+### Install Dependencies
+```bash
+npm install
+```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+---
 
-3. **Start the local development server:**
-   ```bash
-   npm run dev
-   ```
+## 12. Run
 
-4. **Access the application:**  
-   Open your browser and navigate to the address shown in your terminal (typically `http://localhost:5173`).
+### Start the Development Server
+```bash
+npm run dev
+```
 
-### Production Build & Linting
+Open your browser and navigate to the address shown in your terminal:
+```text
+http://localhost:5173
+```
 
-Create a production-optimized build:
+### Production Build
 ```bash
 npm run build
 ```
 
-Run code quality linting:
+### Linting
 ```bash
 npm run lint
 ```
 
----
-
-## 🔑 Demo Access & Role Switching
-
-The prototype includes a pre-configured, 1-click persona switching mechanism in the top navigation bar and `/login`:
-
-- **Coordinator**: Full regional oversight across all 8 states and corridor reroutes.
-- **District Authority**: District-level incident focus and local emergency resources.
-- **Field Officer**: Priority access to offline-ready incident reporting.
-- **NDRF Commander**: Emergency lane clearances and specialized rescue convoys.
-- **Convoy Pilot / Driver**: Driver-focused route navigation and distress beacons.
-- **System Administrator**: Full user administration, permissions, and audit logs.
-
-*Each persona dynamically alters available navigation items and operational views.*
+*(For backend and Docker deployment environments, refer to the planned service configurations in `docs/deployment.md`.)*
 
 ---
 
-## 🗺️ Regional Operations (All 8 NER States)
+## 13. Future Scope
 
-The command interface allows filtering all operational views across the 8 North Eastern States:
-
-| State | Operational Focus & Lifeline Conduits |
-|:---|:---|
-| **Assam** | Primary gateway hub, Brahmaputra river basin transport, NH-27 Barak section |
-| **Arunachal Pradesh** | Mountain and frontier connectivity, NH-13 Trans-Arunachal corridor |
-| **Meghalaya** | High-rainfall hill corridors, NH-6 mining and freight supply movement |
-| **Manipur** | NH-29 Imphal lifeline connectivity, essential fuel and medical supply flows |
-| **Mizoram** | NH-306 Silchar–Aizawl single-corridor supply dependency |
-| **Nagaland** | Dimapur–Kohima chokepoints, Chumukedima landslide mitigation sector |
-| **Tripura** | Agartala multimodal transport and international transit links |
-| **Sikkim** | NH-10 Teesta River axis and Gangtok strategic supply route |
+* **Advanced Flood Prediction:** Integrate deep historical inundation data with high-resolution digital elevation models (DEM) to forecast washouts hours in advance.
+* **Machine-Learning Disruption Prediction:** Train and validate spatial-temporal models to estimate link failure probability within 6-hour and 24-hour lookaheads.
+* **NavIC (IRNSS) Telemetry:** Direct hardware integration with indigenous NavIC satellite positioning modules on relief convoys.
+* **Satellite Synthetic Aperture Radar (SAR):** Automated ingestion of Sentinel-1 / RISAT SAR data to detect surface water through thick monsoon cloud cover.
+* **Multi-Objective Route Resilience:** Route optimization balancing travel time, terrain gradient, bridge load capacity, and slide probability.
+* **Automated Bilingual SMS / IVR:** Instant push alerts to convoy drivers and village heads approaching sudden road cuts.
+* **Pan-NER Expansion:** Scale full corridor coverage across all 8 North Eastern States.
 
 ---
 
-## 🔮 Strategic Roadmap
+## 14. Data Integrity & Demo Policy
 
-The following enhancements are planned for subsequent development phases:
+ASOMSETU is designed around the principle:
 
-- [ ] **NavIC / IRNSS Integration:** Native hardware support for Indian satellite navigation systems on relief convoys.
-- [ ] **LoRaWAN / VHF Mesh Fallback:** Automatic mesh packet routing when cellular base stations are downed by floods.
-- [ ] **Drone & LiDAR Feeds:** Real-time aerial photogrammetry for early detection of slope creep and impending slides.
-- [ ] **Dynamic Bilingual SMS / IVR:** Automated voice and text alerts to convoy pilots entering suddenly blocked valleys.
-- [ ] **External API Connectors:** Live ingestion of IMD weather radars and Central Water Commission (CWC) river gauges.
-- [ ] **Persistent Backend DB:** Migration from client-side simulated state to PostgreSQL/PostGIS and distributed event streams.
+> **Operational decisions should be based on traceable evidence.**
 
----
-
-## 📊 Project Status
-
-> **Current Stage:** Prototype / SIH Demonstration Platform  
-> The repository focuses on demonstrating the end-to-end operational workflow, GIS visualization, role-based governance, terrain risk intelligence, and coordinated disaster logistics model for the North Eastern Region. External API integrations, live telemetry hardware, and production-scale microservices represent planned roadmap items.
-
----
-
-## 👥 Smart India Hackathon (SIH) Context
-
-- **Project:** SIH-NER — North Eastern Region Logistics & Accessibility Intelligence Command Center
-- **Category:** Disaster Management & Logistics Accessibility Intelligence
-- **Target Geography:** North Eastern Region (NER), India
-- **Nodal Ministry / Council:** Ministry of Development of North Eastern Region (MDoNER) / North Eastern Council (NEC)
-- **Repository:** [https://github.com/Sumit9711/NER](https://github.com/Sumit9711/NER)
+Therefore:
+* The frontend is never treated as the source of truth.
+* Numerical values originate from verified datasets, geospatial models, or user inputs.
+* External data sources and APIs are not fabricated.
+* Simulated events and demo datasets are explicitly marked:
+  ```text
+  DEMO MODE — SIMULATED EVENTS
+  ```
+* If an external integration is awaiting live API keys:
+  ```text
+  Data unavailable — Awaiting source connection
+  ```
+* AI predictions expose their contributing evidence, confidence level, and source timestamps.
 
 ---
 
-## 📄 License
+## 15. Security
 
-This project is licensed under the **MIT License**. See the `LICENSE` file for details.
+The platform implements and adheres to civil defense security standards:
+* JWT-based secure session tokens
+* Role-Based Access Control (RBAC) with 6 distinct operational personas
+* Server-side permission guards
+* Input sanitization and payload validation
+* Audit logging of all command decisions, bypass activations, and role transitions
+* Strict secret isolation (credentials never committed to version control)
+
+**Supported Access Personas:**
+```text
+ADMIN                  — System Administrator & Access Governance
+LOGISTICS_COORDINATOR  — Regional Command & Route Authorization
+FIELD_OFFICER          — Ground Inspection & Offline Reporting
+```
+
+---
+
+## 16. Core Mission
+
+ASOMSETU is built around one governing principle:
+
+> **Don't just detect disruption. Protect the mission.**
+
+When a road becomes risky, the important question is not only:
+
+**"What happened to the road?"**
+
+It is:
+
+**"Which critical mission will be affected, what happens if the road fails, and what should we do now?"**
+
+ASOMSETU connects real-world disruption intelligence with mission-level decisions to ensure uninterrupted emergency supply lines across the North Eastern Region.
 
 ---
 
 <div align="center">
 
-**Built for resilient logistics, faster response, and uninterrupted connectivity across the North Eastern Region of India.**
+**ASOMSETU — Protect the Mission**  
+*Built for the safety, resilience, and connectivity of the North Eastern Region of India.*
 
 </div>
