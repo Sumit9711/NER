@@ -1,4 +1,4 @@
-# ASOMSETU — Protect the Mission
+# SIH-NER — Protect the Mission
 
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -7,11 +7,12 @@
 [![Smart India Hackathon](https://img.shields.io/badge/SIH_2026-PS26002-FF9933?style=for-the-badge)](https://sih.gov.in/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
-**AI-Based Emergency Logistics Resilience & Accessibility Platform for the North Eastern Region**
+**North Eastern Region Logistics & Accessibility Intelligence Command Center**  
+*AI-Based Emergency Logistics Resilience & Accessibility Platform for the North Eastern Region*
 
-ASOMSETU is an AI-assisted emergency logistics intelligence platform designed to help authorities plan, monitor, and protect critical supply missions during floods, heavy rainfall, road blockages, river-level changes, and other disruptions across the North Eastern Region (NER).
+**SIH-NER** is an AI-assisted emergency logistics intelligence platform designed to help authorities plan, monitor, and protect critical supply missions during floods, heavy rainfall, road blockages, river-level changes, and other disruptions across the North Eastern Region (NER).
 
-Instead of only showing where a disruption has occurred, ASOMSETU answers:
+Instead of only showing where a disruption has occurred, SIH-NER answers:
 
 > **"What happens if this road fails?"**
 
@@ -21,7 +22,7 @@ It identifies affected missions, facilities, settlements, estimated delays, alte
 
 ## 1. Project Information
 
-* **Project Title:** ASOMSETU — AI-Based Emergency Logistics Resilience & Accessibility Platform
+* **Project Title:** SIH-NER — AI-Based Emergency Logistics Resilience & Accessibility Platform
 * **PS ID:** PS26002
 * **PS Title:** AI-Based Smart Logistics and Accessibility Intelligence Platform for North Eastern Region (NER)
 * **Category:** Software
@@ -51,7 +52,7 @@ Existing systems often provide individual data points such as weather, flood inf
 
 ## 3. Proposed Solution
 
-**ASOMSETU** integrates geospatial data, weather and flood information, road-network data, field reports, mission information, and vehicle telemetry into a unified emergency logistics command platform.
+**SIH-NER** integrates geospatial data, weather and flood information, road-network data, field reports, mission information, and vehicle telemetry into a unified emergency logistics command platform.
 
 The system follows:
 
@@ -73,7 +74,7 @@ A logistics coordinator can select a road segment and simulate:
 
 > **"What happens if this road fails?"**
 
-ASOMSETU temporarily removes the road from the routing network and calculates:
+SIH-NER temporarily removes the road from the routing network and calculates:
 
 * Affected active missions
 * Affected hospitals and health centres
@@ -84,7 +85,7 @@ ASOMSETU temporarily removes the road from the routing network and calculates:
 * Accessibility changes
 * Recommended intervention
 
-This makes ASOMSETU a **logistics resilience platform**, rather than simply a navigation or map application.
+This makes SIH-NER a **logistics resilience platform**, rather than simply a navigation or map application.
 
 ---
 
@@ -198,7 +199,7 @@ The system does not hide uncertainty behind an opaque single score.
                                  │
                                  ▼
                     ┌─────────────────────────┐
-                    │   ASOMSETU Web / PWA    │
+                    │   SIH-NER Web / PWA     │
                     │ React + TypeScript       │
                     │ MapLibre + Offline PWA   │
                     └────────────┬────────────┘
@@ -281,7 +282,7 @@ Weather / River / Flood / Roads / Field Reports
 ## 7. Repository Structure
 
 ```text
-ASOMSETU / ner-logistics-command-center/
+ner-logistics-command-center / SIH-NER/
 │
 ├── README.md                       # Comprehensive Platform Documentation
 ├── LICENSE                         # Open-source MIT License
@@ -364,7 +365,7 @@ The final SIH presentation is stored in [`submission/presentation.md`](./submiss
 
 The presentation covers:
 1. Problem statement and NER logistics context
-2. ASOMSETU solution & "Protect the Mission" methodology
+2. SIH-NER solution & "Protect the Mission" methodology
 3. Technical architecture and decision pipeline
 4. Feasibility and regional implementation plan
 5. Impact on disaster relief and supply chain resilience
@@ -484,7 +485,7 @@ npm run lint
 
 ## 14. Data Integrity & Demo Policy
 
-ASOMSETU is designed around the principle:
+SIH-NER is designed around the principle:
 
 > **Operational decisions should be based on traceable evidence.**
 
@@ -525,7 +526,7 @@ FIELD_OFFICER          — Ground Inspection & Offline Reporting
 
 ## 16. Core Mission
 
-ASOMSETU is built around one governing principle:
+SIH-NER is built around one governing principle:
 
 > **Don't just detect disruption. Protect the mission.**
 
@@ -537,13 +538,13 @@ It is:
 
 **"Which critical mission will be affected, what happens if the road fails, and what should we do now?"**
 
-ASOMSETU connects real-world disruption intelligence with mission-level decisions to ensure uninterrupted emergency supply lines across the North Eastern Region.
+SIH-NER connects real-world disruption intelligence with mission-level decisions to ensure uninterrupted emergency supply lines across the North Eastern Region.
 
 ---
 
 <div align="center">
 
-**ASOMSETU — Protect the Mission**  
+**SIH-NER — Protect the Mission**  
 *Built for the safety, resilience, and connectivity of the North Eastern Region of India.*
 
 </div>
